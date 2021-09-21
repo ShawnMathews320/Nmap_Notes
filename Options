@@ -10,6 +10,9 @@ whole internet. The largest value for IPv4 is /32, which scans just the named ho
 IPv6 is /128, which does the same thing.)
 
 -sL (list scan: The list scan is a degenerate form of host discovery that simply lists each host of the network(s) specified, without sending any packets to the target 
-hosts.)
+hosts. If you wish to disable host discovery while still performing such higher level functionality, read up on the -Pn (skip host discovery) option.)
 
---Pn (disable host discovery)
+-sn (no port scan. This option tells Nmap not to do a port scan after host discovery, and only print out the available hosts that responded to the host discovery probes.)
+
+--Pn (disable host discovery/no ping. Systems administrators often find this option valuable as well. It can easily be used to count available machines on a network or 
+monitor server availability. This is often called a ping sweep, and is more reliable than pinging the broadcast address because many hosts do not reply to broadcast queries.)
