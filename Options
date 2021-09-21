@@ -9,6 +9,7 @@ If the name resolves to more than one IP address, only the first one will be sca
 whole internet. The largest value for IPv4 is /32, which scans just the named host or IP address because all address bits are fixed. The largest value for
 IPv6 is /128, which does the same thing.)
 
--sL (list scan)
+-sL (list scan: The list scan is a degenerate form of host discovery that simply lists each host of the network(s) specified, without sending any packets to the target 
+hosts.)
 
 --Pn (disable host discovery)
