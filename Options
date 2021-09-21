@@ -16,3 +16,6 @@ hosts. If you wish to disable host discovery while still performing such higher 
 
 --Pn (disable host discovery/no ping. Systems administrators often find this option valuable as well. It can easily be used to count available machines on a network or 
 monitor server availability. This is often called a ping sweep, and is more reliable than pinging the broadcast address because many hosts do not reply to broadcast queries.)
+
+- For machines on a local ethernet network, ARP scanning will still be performed (unless --disable-arp-ping or --send-ip is specified) because Nmap needs MAC addresses 
+to further scan target hosts.
