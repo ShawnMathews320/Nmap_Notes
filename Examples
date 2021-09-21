@@ -1,0 +1,6 @@
+- A representative Nmap scan: nmap -A -T4 scanme.nmap.org
+
+- Show common Nmap options, but some obscure options are not included here (would need to read manual) : nmap
+
+- Note: Everything on the Nmap command-line that isn't an option (or option argument) is treated as a target host specification. The simplest case is to specify 
+a target IP address or hostname for scanning.
