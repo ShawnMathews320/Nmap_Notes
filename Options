@@ -1,4 +1,10 @@
--A (Enable OS and version detection, script scanning, and traceroute)
--T4 (faster execution)
+- A (Enable OS and version detection, script scanning, and traceroute)
 
+- T4 (faster execution)
 
+- --resolve-all (When a hostname is given as a target, it is resolved via the Domain Name System (DNS) to determine the IP address to scan. 
+If the name resolves to more than one IP address, only the first one will be scanned. Use this to make Nmap scan all the resolved addresses instead of only the first one)
+
+- /<numbits> (append this to the end of an ip address or hostname for CIDR notation. <hostname>/24 would scan the 256 hosts between the hostname. /0 would target the 
+whole internet. The largest value for IPv4 is /32, which scans just the named host or IP address because all address bits are fixed. The largest value for
+IPv6 is /128, which does the same thing.)
