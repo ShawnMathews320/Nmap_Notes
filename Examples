@@ -4,3 +4,23 @@
 
 - Note: Everything on the Nmap command-line that isn't an option (or option argument) is treated as a target host specification. The simplest case is to specify 
 a target IP address or hostname for scanning.
+
+- Octet range addressing will allow you to skip IPs. For example, 192.168.0-255.1-254 will skip all addresses in the range that end in .0 or .255, and 192.168.3-5,7.1 
+will scan the four addresses 192.168.3.1, 192.168.4.1, 192.168.5.1, and 192.168.7.1. Using - by itself is the same as 0-255, but remember to use 0- in the first octet 
+so the target specification doesn't look like a command-line option.
+
+- To input from a list, simply generate the list of hosts to scan and pass that filename to Nmap as an argument to the -iL option. You can specify a hyphen (-) as 
+the filename if you want Nmap to read hosts from standard input rather than an actual file.: -iL <inputfilename> (Input from list)
+
+- To randomly choose targets, the <num hosts> argument tells Nmap how many IPs to generate. Undesirable IPs such as those in certain private, multicast, or 
+unallocated address ranges are automatically skipped. The argument 0 can be specified for a never-ending scan. The command (nmap -Pn -sS -p 80 -iR 0 --open) will 
+locate random web servers for browsing: -iR <num hosts> (Choose random targets)
+
+- --exclude <host1>[,<host2>[,...]] will specify a comma-separated list of targets to be excluded from the scan even if they are part of the overall network 
+range you specify. This can be useful when the network you wish to scan includes untouchable mission-critical servers, systems that are known to react adversely 
+to port scans, or subnets administered by other people.
+
+--excludefile <exclude_file> (Exclude list from file) This offers the same functionality as the --exclude option, except that the excluded targets are provided 
+in a newline-, space-, or tab-delimited <exclude_file> rather than on the command line.The exclude file may contain comments that start with # and extend to the 
+end of the line.
+
